@@ -36,8 +36,8 @@
   margin-bottom: 20px;
 }
 
-.show {
-  left: 120px;
+.nav.show {
+  transform: translateX(0);
 }
 
 .section {

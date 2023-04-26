@@ -5,6 +5,7 @@
   --color-text--light: #3d3b3b;
   --color-box-shadow-steady: #a39a9a;
   --color-hover: aqua;
+  --opp-bg: #000000a5;
 }
 
 .dark {
@@ -14,6 +15,7 @@
   --color-text--light: #e7e4e4;
   --color-box-shadow-steady: #9aeffe;
   --color-hover: #9aeffe;
+  --opp-bg: #ffffffa5;
 }
 
 *,

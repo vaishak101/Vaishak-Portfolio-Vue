@@ -1,8 +1,8 @@
 <template>
   <HeroSlide :active="activeTab" />
-  <WorkSlide :active="activeTab" />
-  <CodepenSlide :active="activeTab" />
-  <About :active="activeTab" />
+  <WorkSlide v-if="pageLoad" :active="activeTab" />
+  <CodepenSlide v-if="pageLoad" :active="activeTab" />
+  <About v-if="pageLoad" :active="activeTab" />
 </template>
 
 <script>
@@ -16,15 +16,16 @@ export default {
   props: {
     activeTab: Number,
   },
-  watch: {
-    activeTab(val) {
-      // this.animateSection(val);
-    },
-  },
   data() {
-    return {};
+    return {
+      pageLoad: false,
+    };
   },
-
+  mounted() {
+    setTimeout(() => {
+      this.pageLoad = true;
+    }, 2000);
+  },
   methods: {
     animateSection(e) {
       const sections = document.querySelectorAll(".section");

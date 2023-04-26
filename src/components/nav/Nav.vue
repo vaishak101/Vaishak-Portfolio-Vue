@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav">
+  <nav class="nav" :class="{ show: menuOpen }">
     <h1>
       <a
         class="nav__logo"
@@ -22,7 +22,7 @@
           class="nav__links click"
           data-sect="1"
           @click="sendActive(1)"
-          :class="{ disabled: disabled }"
+          :class="{ disabled: disabled, activelink: active === 1 }"
           >Work</a
         >
       </li>
@@ -32,7 +32,7 @@
           class="nav__links click"
           data-sect="2"
           @click="sendActive(2)"
-          :class="{ disabled: disabled }"
+          :class="{ disabled: disabled, activelink: active === 2 }"
           >Pens</a
         >
       </li>
@@ -42,7 +42,7 @@
           class="nav__links click"
           data-sect="3"
           @click="sendActive(3)"
-          :class="{ disabled: disabled }"
+          :class="{ disabled: disabled, activelink: active === 3 }"
           >About</a
         >
       </li>
@@ -79,33 +79,71 @@
       </svg>
     </a>
   </nav>
+  <a v-show="mobMode" class="nav__slider" @click="toggleMenu">
+    <div class="nav__btn" :class="{ menuactive: menuOpen }">
+      <span class="bar-one bar"></span>
+      <span class="bar-two bar"></span>
+      <span class="bar-three bar"></span>
+    </div>
+  </a>
+  <div
+    v-show="mobMode"
+    v-if="menuOpen"
+    class="nav_overlay"
+    @click="toggleMenu"
+  ></div>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      mobMode: window.innerWidth <= 1200,
+      windowWidth: window.innerWidth,
+      active: 0,
       darkMode: false,
       disabled: false,
+      menuOpen: false,
     };
   },
-
+  watch: {
+    windowWidth(val) {
+      val <= 1200 ? (this.mobMode = true) : (this.mobMode = false);
+    },
+  },
   methods: {
     sendActive(num) {
-      this.disabled = true;
+      this.menuOpen = !this.menuOpen;
+      if (num !== this.active) {
+        this.disabled = true;
+        setTimeout(() => {
+          this.disabled = false;
+        }, 2500);
+      }
+      this.active = num;
       this.$emit("nav-click", num);
-      setTimeout(() => {
-        this.disabled = false;
-      }, 2500);
     },
     darkModeHandle() {
       this.darkMode = !this.darkMode;
       document.body.classList.toggle("dark");
     },
+    onResize() {
+      this.windowWidth = window.innerWidth;
+    },
+    toggleMenu() {
+      console.log("toggle");
+      this.menuOpen = !this.menuOpen;
+    },
   },
 
   mounted() {
-    console.log(`Nav Mounted`);
+    this.$nextTick(() => {
+      window.addEventListener("resize", this.onResize);
+    });
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("resize", this.onResize);
   },
 };
 </script>
