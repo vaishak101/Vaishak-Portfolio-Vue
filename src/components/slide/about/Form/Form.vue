@@ -10,10 +10,10 @@
             class="form__input"
             id="fname"
             name="fname"
-            required
             placeholder="John Wick"
-            v-model="name"
+            v-model="fname"
           />
+          <p class="error-msg" v-if="fnameError.status">{{ fnameError.msg }}</p>
         </div>
         <div class="form__group">
           <label for="email" class="form__label">Email</label
@@ -22,10 +22,10 @@
             class="form__input"
             id="email"
             name="email"
-            required
             placeholder="Johnwick@example.com"
             v-model="email"
           />
+          <p class="error-msg" v-if="emailError.status">{{ emailError.msg }}</p>
         </div>
         <div class="form__group">
           <label for="message" class="form__label">Message</label
@@ -38,39 +38,52 @@
             placeholder="Namaste, I liked your website !"
             v-model="message"
           ></textarea>
+          <p class="error-msg" v-if="messageError.status">
+            {{ messageError.msg }}
+          </p>
         </div>
-        <button type="submit" class="form__btn">Send Message</button>
+        <button type="submit" class="form__btn" v-show="!disableCheck">
+          Send Message
+        </button>
+        <p v-if="statusText.length > 1">{{ statusText }}</p>
+        <button v-if="statusText.length > 1" @click="$emit('closeModal')">
+          Okay
+        </button>
       </form>
     </div>
   </section>
 </template>
 
 <script>
-const WEB3FORMS_ACCESS_KEY = 0;
-
-import { useVuelidate } from "@vuelidate/core";
-import { required, email } from "@vuelidate/validators";
-
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_ACCESS_KEY;
 export default {
-  setup() {
-    return { v$: useVuelidate() };
-  },
   data() {
     return {
-      name: "",
+      fname: "",
       email: "",
       message: "",
-    };
-  },
-  validations() {
-    return {
-      name: { required }, // Matches this.firstName
-      email: { required, email }, // Matches this.email
-      message: { required }, // Matches this.lastName
+      disableCheck: false,
+      statusText: "",
+      fnameError: {
+        status: false,
+        msg: "",
+      },
+      messageError: {
+        status: false,
+        msg: "",
+      },
+      emailError: {
+        status: false,
+        msg: "",
+      },
     };
   },
   methods: {
     async submitForm() {
+      if (!this.validate()) {
+        return;
+      }
+      this.disableCheck = true;
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
@@ -79,19 +92,51 @@ export default {
         },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
-          name: this.name,
+          name: this.fname,
           email: this.email,
           message: this.message,
         }),
       });
       const result = await response.json();
       if (result.success) {
-        this.$emit("closeModal");
+        this.statusText = "Message Sent ! Thank you!";
       }
     },
-  },
-  mounted() {
-    console.log();
+    validate() {
+      const checkName = this.fname.trim();
+      const checkMsg = this.message.trim();
+      const checkEmail = this.email.trim();
+      const pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
+      if (checkName === "") {
+        this.fnameError.status = true;
+        this.fnameError.msg = "Please enter your name!";
+        setTimeout(() => {
+          this.fnameError.status = false;
+        }, 3500);
+        return false;
+      } else if (!pattern.test(checkEmail)) {
+        this.emailError.status = true;
+        this.emailError.msg = "Please enter a valid email!";
+        setTimeout(() => {
+          this.emailError.status = false;
+        }, 3500);
+        return false;
+      } else if (checkMsg === "" || checkMsg.length > 50) {
+        this.messageError.status = true;
+        if (checkMsg.length > 50) {
+          this.messageError.msg = "Please send msg below 50 characters!";
+        } else {
+          this.messageError.msg = "Please enter a msg!";
+        }
+        setTimeout(() => {
+          this.messageError.status = false;
+        }, 3500);
+        return false;
+      } else {
+        return true;
+      }
+    },
   },
 };
 </script>
