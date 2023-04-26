@@ -51,9 +51,6 @@
           </p>
         </div>
       </div>
-      <div class="about__contact">
-        <button class="about__send--btn">Say Hi !</button>
-      </div>
     </div>
   </section>
 </template>

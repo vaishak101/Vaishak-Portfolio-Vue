@@ -2,7 +2,7 @@
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background-image: url(/assets/img/pxArt.webp);
+  background-image: url(/src/assets/img/pxArt.webp);
   background-color: #000000;
   background-position: center;
   background-size: cover;
@@ -10,12 +10,12 @@
 }
 @media (hover: none) {
   .about__img {
-    background-image: url(/assets/img/about.webp);
+    background-image: url(/src/assets/img/about.webp);
     box-shadow: 0px 10px 20px var(--color-box-shadow-steady);
   }
 }
 .about__img:hover {
-  background-image: url(/assets/img/about.webp);
+  background-image: url(/src/assets/img/about.webp);
   box-shadow: 0px 10px 20px var(--color-box-shadow-steady);
 }
 @media (max-width: 400px) {
