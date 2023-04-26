@@ -1,7 +1,6 @@
 <template>
-  <h1>Layout</h1>
-  <Nav />
-  <SlideContainer />
+  <Nav @nav-click="handleClick" />
+  <SlideContainer :activeTab="activeTab" />
 </template>
 
 <script>
@@ -11,13 +10,20 @@ import SlideContainer from "./slide/SlideContainer.vue";
 export default {
   components: { Nav, SlideContainer },
   data() {
-    return {};
+    return {
+      activeTab: 0,
+    };
   },
 
-  methods: {},
+  methods: {
+    handleClick(num) {
+      console.log(num);
+      this.activeTab = num;
+    },
+  },
 
   mounted() {
-    console.log(`Layout Mounted`);
+    console.log(`Layout Mounted ${typeof this.activeTab}`);
   },
 };
 </script>
