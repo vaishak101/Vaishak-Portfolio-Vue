@@ -51,17 +51,25 @@
           </p>
         </div>
       </div>
+      <div class="about__contact">
+        <button class="about__send--btn" @click="showModal = !showModal">
+          Say Hi !
+        </button>
+      </div>
     </div>
   </section>
+  <Form v-if="showModal" @closeModal="showModal = false" />
 </template>
 
 <script>
+import Form from "./Form/Form.vue";
 export default {
   props: {
     active: Number,
   },
+  components: { Form },
   data() {
-    return {};
+    return { showModal: false };
   },
 
   methods: {},
