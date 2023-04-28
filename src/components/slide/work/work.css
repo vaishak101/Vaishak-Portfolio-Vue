@@ -102,9 +102,9 @@
     opacity: 1;
     transform: rotate(-90deg) translate(-20%, -80%);
   }
-  .work__card .work__card__btn {
+  .word__card--cta-wrap {
     opacity: 1;
-    transform: translate(-50%, 0%);
+    /* transform: translate(-50%, 0%); */
   }
   .work__card .work__card--container {
     filter: blur(2px);

@@ -32,7 +32,8 @@
             <span class="about__desc--text"
               >&nbsp;&nbsp;&nbsp;&nbsp;Skills:</span
             >
-            <span class="about__desc--skill" title="Html 5">
+            <div class="logo-container">
+              <span class="about__desc--skill" title="Html 5">
               <svg
                 width="800px"
                 height="800px"
@@ -48,7 +49,7 @@
                 />
               </svg>
             </span>
-            &nbsp;
+            
             <span class="about__desc--skill" title="Css 3">
               <svg
                 width="800px"
@@ -65,7 +66,7 @@
                 />
               </svg>
             </span>
-            &nbsp;
+            
             <span class="about__desc--skill" title="Javascript">
               <svg
                 width="800px"
@@ -85,7 +86,7 @@
                 />
               </svg>
             </span>
-            &nbsp;
+            
             <span class="about__desc--skill" title="Sass">
               <svg
                 width="800px"
@@ -103,7 +104,7 @@
                 </g>
               </svg>
             </span>
-            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
             <span class="about__desc--skill" title="React.js">
               <svg
                 width="800px"
@@ -124,7 +125,7 @@
                 />
               </svg>
             </span>
-            &nbsp;
+            
             <span class="about__desc--skill" title="Vue.js">
               <svg
                 width="800px"
@@ -143,7 +144,7 @@
                 />
               </svg>
             </span>
-            &nbsp;
+            
             <span class="about__desc--skill" title="Next.js">
               <svg
                 fill="#000000"
@@ -157,7 +158,7 @@
                 />
               </svg>
             </span>
-            &nbsp;
+            
             <span class="about__desc--skill" title="Node.js">
               <svg
                 width="2500"
@@ -184,7 +185,7 @@
                 />
               </svg>
             </span>
-            &nbsp;
+            
             <span class="about__desc--skill" title="Express.js">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -197,7 +198,7 @@
                 />
               </svg>
             </span>
-            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
             <span class="about__desc--skill" title="Mongo Db">
               <svg
                 height="2500"
@@ -219,7 +220,7 @@
                 />
               </svg>
             </span>
-            &nbsp;
+            
             <span class="about__desc--skill" title="Wordpress">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -255,7 +256,7 @@
                 </g>
               </svg>
             </span>
-            &nbsp;
+            
             <span class="about__desc--skill" title="Php">
               <svg
                 width="2500"
@@ -279,7 +280,7 @@
                 </g>
               </svg>
             </span>
-            &nbsp;
+            
             <span class="about__desc--skill" title="MySql">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -311,6 +312,7 @@
                 />
               </svg>
             </span>
+            </div>
             <br />
             <span class="about__desc--brackets"
               ><br />&nbsp;&nbsp;&nbsp;&nbsp;}</span
