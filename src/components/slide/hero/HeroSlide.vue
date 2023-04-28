@@ -26,16 +26,6 @@
       </div>
     </h1>
     <h2 class="hero__heading--2">
-      <span class="intro__text--2">F</span>
-      <span class="intro__text--2">R</span>
-      <span class="intro__text--2">O</span>
-      <span class="intro__text--2">N</span>
-      <span class="intro__text--2">T</span>
-      <span class="intro__text--2">-</span>
-      <span class="intro__text--2">E</span>
-      <span class="intro__text--2">N</span>
-      <span class="intro__text--2">D</span>
-      <span class="intro__text--2 space">&nbsp;</span>
       <div class="hero__text--hide">
         <span class="intro__text--2">W</span>
         <span class="intro__text--2">E</span>
