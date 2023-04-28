@@ -46,7 +46,11 @@
           Send Message
         </button>
         <p v-if="statusText.length > 1">{{ statusText }}</p>
-        <button v-if="statusText.length > 1" @click="$emit('closeModal')">
+        <button
+          v-if="statusText.length > 1"
+          class="form__btn"
+          @click="$emit('closeModal')"
+        >
           Okay
         </button>
       </form>
@@ -84,22 +88,27 @@ export default {
         return;
       }
       this.disableCheck = true;
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          name: this.fname,
-          email: this.email,
-          message: this.message,
-        }),
-      });
-      const result = await response.json();
-      if (result.success) {
-        this.statusText = "Message Sent ! Thank you!";
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_ACCESS_KEY,
+            name: this.fname,
+            email: this.email,
+            message: this.message,
+          }),
+        });
+        const result = await response.json();
+        if (result.success) {
+          this.statusText = "Message Sent ! Thank you!";
+        }
+      } catch (error) {
+        console.log(error);
+        this.statusText = error.message;
       }
     },
     validate() {

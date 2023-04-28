@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="work__card">
-          <span class="work__card--span-1">Next.js App</span>
+          <span class="work__card--span-1">React App</span>
           <span class="work__card--span-2">#Project 2</span>
           <div class="work__card--container">
             <img
@@ -53,11 +53,21 @@
             />
           </div>
           <p class="work__card--desc">
-            A Minimalistic Design Website Built With Next.js
+            A Minimalistic Design Website Built With React.js
           </p>
           <div class="word__card--cta-wrap">
-            <a class="work__card__btn">Git Hub</a>
-            <a class="work__card__btn">View Page</a>
+            <a
+              class="work__card__btn"
+              href="https://github.com/vaishak101/citaz-react-app"
+              target="_blank"
+              >Git Hub</a
+            >
+            <a
+              class="work__card__btn"
+              href="https://vaishak101.github.io/citaz-react-app/"
+              target="_blank"
+              >View Page</a
+            >
           </div>
         </div>
         <div class="work__card">
@@ -104,11 +114,21 @@
             </div>
           </div>
           <p class="work__card--desc">
-            Todo App Build using React which performs CRUD operation.
+            Todo App Built using React which performs CRUD operation.
           </p>
           <div class="word__card--cta-wrap">
-            <a class="work__card__btn">Git Hub</a>
-            <a class="work__card__btn">View Page</a>
+            <a
+              class="work__card__btn"
+              href="https://github.com/vaishak101/vaishak-react-todo"
+              target="_blank"
+              >Git Hub</a
+            >
+            <a
+              class="work__card__btn"
+              href="https://vaishak101.github.io/vaishak-react-todo/"
+              target="_blank"
+              >View Page</a
+            >
           </div>
         </div>
         <div class="work__card">
@@ -116,17 +136,22 @@
           <span class="work__card--span-2">#Project 4</span>
           <div class="work__card--container">
             <div class="work__card--todo">
-              <img
+              <!-- <img
                 src=""
                 class="work__card--todo--img work__card--todo--img-1"
                 alt="LunchBOX"
-              />
+              /> -->
             </div>
           </div>
           <p class="work__card--desc">Lunchbox</p>
           <div class="word__card--cta-wrap">
-            <a class="work__card__btn">Git Hub</a>
-            <a class="work__card__btn">View Page</a>
+            <a
+              class="work__card__btn"
+              href="https://github.com/vaishak101/lunch-box"
+              target="_blank"
+              >Git Hub</a
+            >
+            <a class="work__card__btn" href="#" target="_blank">View Page</a>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@
   justify-content: space-between;
   z-index: 90000;
   background-color: var(--color-page-background);
-  transition: left 1s ease;
+  transition: transform 0.5s ease;
 }
 .nav__ul {
   list-style-type: none;

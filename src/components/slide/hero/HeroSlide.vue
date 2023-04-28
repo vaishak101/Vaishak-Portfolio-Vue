@@ -10,7 +10,7 @@
     id="hero"
   >
     <h1 class="hero__heading">
-      <span class="greet__text">Welcome!</span>
+      <span class="greet__text">Welcome</span>
       <span class="intro__text">I</span>
       <span class="intro__text">'</span>
       <span class="intro__text">M</span>
@@ -26,16 +26,6 @@
       </div>
     </h1>
     <h2 class="hero__heading--2">
-      <span class="intro__text--2">F</span>
-      <span class="intro__text--2">R</span>
-      <span class="intro__text--2">O</span>
-      <span class="intro__text--2">N</span>
-      <span class="intro__text--2">T</span>
-      <span class="intro__text--2">-</span>
-      <span class="intro__text--2">E</span>
-      <span class="intro__text--2">N</span>
-      <span class="intro__text--2">D</span>
-      <span class="intro__text--2 space">&nbsp;</span>
       <div class="hero__text--hide">
         <span class="intro__text--2">W</span>
         <span class="intro__text--2">E</span>
@@ -59,6 +49,7 @@
 
 <script>
 export default {
+  name: "HeroSlide",
   props: {
     active: Number,
   },
@@ -68,9 +59,7 @@ export default {
       greetInterval: setInterval(this.checkHour, 20000),
     };
   },
-  created() {
-    console.log(this.active, "hero");
-  },
+
   watch: {
     active(val) {
       if (val != 0) {
@@ -91,7 +80,7 @@ export default {
         colorBlink,
         dark,
         index = 0,
-        indexTwo = 22;
+        indexTwo = 12;
       document.querySelector("body").classList.contains("dark")
         ? (dark = true)
         : (dark = false);
@@ -108,7 +97,7 @@ export default {
         o = setInterval(function () {
           descText.forEach((e) => (e.style.color = `${colorTextHero}`));
           let e = descText[indexTwo--];
-          if (indexTwo < -1) return (indexTwo = 22), void clearInterval(o);
+          if (indexTwo < -1) return (indexTwo = 12), void clearInterval(o);
           e.style.color = `${colorBlink}`;
         }, 26);
     },
@@ -118,7 +107,7 @@ export default {
       const t = new Date();
       let e = (t.getHours() + t.getMinutes() / 60).toFixed(2);
       e < 12 && e >= 0
-        ? (msg.textContent = "Morning!")
+        ? (msg.textContent = "Morning")
         : e >= 12 && e < 18
         ? (msg.textContent = "Hello there")
         : e >= 18 && (msg.textContent = "Good Evening");

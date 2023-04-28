@@ -1,6 +1,6 @@
 <template>
-  <Nav @nav-click="handleClick" />
-  <SlideContainer :activeTab="activeTab" />
+  <Nav @nav-click="handleClick" @darkModeToggle="handleDarkToggle" />
+  <SlideContainer :activeTab="activeTab" :toggleDark="toggleDark" />
 </template>
 
 <script>
@@ -12,18 +12,17 @@ export default {
   data() {
     return {
       activeTab: 0,
+      toggleDark: Boolean,
     };
   },
 
   methods: {
     handleClick(num) {
-      console.log(num);
       this.activeTab = num;
     },
-  },
-
-  mounted() {
-    console.log(`Layout Mounted ${typeof this.activeTab}`);
+    handleDarkToggle(val) {
+      this.toggleDark = val;
+    },
   },
 };
 </script>

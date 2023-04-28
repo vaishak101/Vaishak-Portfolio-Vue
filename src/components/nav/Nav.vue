@@ -126,12 +126,12 @@ export default {
     darkModeHandle() {
       this.darkMode = !this.darkMode;
       document.body.classList.toggle("dark");
+      this.$emit("darkModeToggle", this.darkMode);
     },
     onResize() {
       this.windowWidth = window.innerWidth;
     },
     toggleMenu() {
-      console.log("toggle");
       this.menuOpen = !this.menuOpen;
     },
   },
