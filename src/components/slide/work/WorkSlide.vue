@@ -62,7 +62,12 @@
               target="_blank"
               >Git Hub</a
             >
-            <a class="work__card__btn" href="" target="_blank">View Page</a>
+            <a
+              class="work__card__btn"
+              href="https://vaishak101.github.io/citaz-react-app/"
+              target="_blank"
+              >View Page</a
+            >
           </div>
         </div>
         <div class="work__card">
@@ -131,11 +136,11 @@
           <span class="work__card--span-2">#Project 4</span>
           <div class="work__card--container">
             <div class="work__card--todo">
-              <img
+              <!-- <img
                 src=""
                 class="work__card--todo--img work__card--todo--img-1"
                 alt="LunchBOX"
-              />
+              /> -->
             </div>
           </div>
           <p class="work__card--desc">Lunchbox</p>
