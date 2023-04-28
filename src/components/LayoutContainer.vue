@@ -1,6 +1,6 @@
 <template>
-  <Nav @nav-click="handleClick" />
-  <SlideContainer :activeTab="activeTab" />
+  <Nav @nav-click="handleClick" @darkModeToggle="handleDarkToggle" />
+  <SlideContainer :activeTab="activeTab" :toggleDark="toggleDark" />
 </template>
 
 <script>
@@ -12,6 +12,7 @@ export default {
   data() {
     return {
       activeTab: 0,
+      toggleDark: Boolean,
     };
   },
 
@@ -19,6 +20,9 @@ export default {
     handleClick(num) {
       console.log(num);
       this.activeTab = num;
+    },
+    handleDarkToggle(val) {
+      this.toggleDark = val;
     },
   },
 

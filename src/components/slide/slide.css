@@ -17,6 +17,7 @@
 @media (max-width: 370px) {
   .primary__heading {
     font-size: 24px;
+    margin: 50px 0 40px 0;
   }
 }
 
@@ -171,17 +172,23 @@
 @media (max-width: 620px) {
   .slider__btn {
     position: absolute;
-    bottom: -15%;
+    top: 50%;
+    z-index: 99999999;
   }
 }
 
 @media (max-width: 620px) {
+  .slider__btn {
+    height: 30px;
+    width: 30px;
+    font-size: 16px;
+  }
   .slider__btn--left {
-    left: 50px;
+    left: 10px;
   }
 
   .slider__btn--right {
-    right: 50px;
+    right: 10px;
   }
 }
 

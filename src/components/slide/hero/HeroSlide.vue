@@ -10,7 +10,7 @@
     id="hero"
   >
     <h1 class="hero__heading">
-      <span class="greet__text">Welcome!</span>
+      <span class="greet__text">Welcome</span>
       <span class="intro__text">I</span>
       <span class="intro__text">'</span>
       <span class="intro__text">M</span>
@@ -118,7 +118,7 @@ export default {
       const t = new Date();
       let e = (t.getHours() + t.getMinutes() / 60).toFixed(2);
       e < 12 && e >= 0
-        ? (msg.textContent = "Morning!")
+        ? (msg.textContent = "Morning")
         : e >= 12 && e < 18
         ? (msg.textContent = "Hello there")
         : e >= 18 && (msg.textContent = "Good Evening");

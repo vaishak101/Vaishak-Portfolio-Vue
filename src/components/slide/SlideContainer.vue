@@ -1,5 +1,5 @@
 <template>
-  <HeroSlide :active="activeTab" />
+  <HeroSlide :active="activeTab" ref="hero" />
   <WorkSlide v-if="pageLoad" :active="activeTab" />
   <CodepenSlide v-if="pageLoad" :active="activeTab" />
   <About v-if="pageLoad" :active="activeTab" />
@@ -15,6 +15,12 @@ export default {
   components: { HeroSlide, WorkSlide, CodepenSlide, About },
   props: {
     activeTab: Number,
+    toggleDark: Boolean,
+  },
+  watch: {
+    toggleDark(val) {
+      console.log(this.$refs.hero.blink());
+    },
   },
   data() {
     return {
