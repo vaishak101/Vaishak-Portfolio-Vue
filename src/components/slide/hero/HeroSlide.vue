@@ -49,6 +49,7 @@
 
 <script>
 export default {
+  name: "HeroSlide",
   props: {
     active: Number,
   },
@@ -58,9 +59,7 @@ export default {
       greetInterval: setInterval(this.checkHour, 20000),
     };
   },
-  created() {
-    console.log(this.active, "hero");
-  },
+
   watch: {
     active(val) {
       if (val != 0) {
@@ -81,7 +80,7 @@ export default {
         colorBlink,
         dark,
         index = 0,
-        indexTwo = 22;
+        indexTwo = 12;
       document.querySelector("body").classList.contains("dark")
         ? (dark = true)
         : (dark = false);
@@ -98,7 +97,7 @@ export default {
         o = setInterval(function () {
           descText.forEach((e) => (e.style.color = `${colorTextHero}`));
           let e = descText[indexTwo--];
-          if (indexTwo < -1) return (indexTwo = 22), void clearInterval(o);
+          if (indexTwo < -1) return (indexTwo = 12), void clearInterval(o);
           e.style.color = `${colorBlink}`;
         }, 26);
     },

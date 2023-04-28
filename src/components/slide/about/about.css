@@ -58,22 +58,16 @@
 }
 .about__desc--skill {
   background-color: var(--color-page-background);
-  font-size: 50px;
   transform: translateY(25%);
   display: inline-block;
+  width: 50px;
+  cursor: pointer;
 }
-.about__desc--skill-1 {
-  color: #f16529;
+.about__desc--skill svg {
+  width: 100%;
+  height: auto;
 }
-.about__desc--skill-2 {
-  color: #008fd5;
-}
-.about__desc--skill-3 {
-  color: #f99d34;
-}
-.about__desc--skill-4 {
-  color: #cd669a;
-}
+
 .about__desc--para:hover .about__desc--fn {
   opacity: 0;
 }

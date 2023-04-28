@@ -19,7 +19,7 @@ export default {
   },
   watch: {
     toggleDark(val) {
-      console.log(this.$refs.hero.blink());
+      this.$refs.hero.blink();
     },
   },
   data() {

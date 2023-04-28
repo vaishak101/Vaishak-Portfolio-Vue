@@ -132,7 +132,6 @@ export default {
       this.windowWidth = window.innerWidth;
     },
     toggleMenu() {
-      console.log("toggle");
       this.menuOpen = !this.menuOpen;
     },
   },

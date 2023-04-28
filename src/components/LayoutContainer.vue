@@ -18,16 +18,11 @@ export default {
 
   methods: {
     handleClick(num) {
-      console.log(num);
       this.activeTab = num;
     },
     handleDarkToggle(val) {
       this.toggleDark = val;
     },
-  },
-
-  mounted() {
-    console.log(`Layout Mounted ${typeof this.activeTab}`);
   },
 };
 </script>

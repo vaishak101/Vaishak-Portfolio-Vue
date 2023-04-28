@@ -11,10 +11,6 @@ export default {
   data() {
     return {};
   },
-  methods: {},
-  mounted() {
-    console.log(`App Mounted.`);
-  },
 };
 </script>
 <style>
