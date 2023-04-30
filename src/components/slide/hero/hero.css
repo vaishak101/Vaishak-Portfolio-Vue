@@ -12,28 +12,6 @@
   align-items: center;
   justify-content: center;
 }
-.canvasBg {
-  position: absolute;
-  top: 50%;
-  right: 0%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  opacity: 0.5;
-}
-.canvasBg {
-  position: absolute;
-  top: 50%;
-  right: 0%;
-  transform: translateY(-50%);
-  background-color: transparent;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  opacity: 0.5;
-}
 
 .greet__text {
   display: block;
