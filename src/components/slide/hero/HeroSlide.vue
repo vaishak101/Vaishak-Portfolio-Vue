@@ -9,6 +9,8 @@
     }"
     id="hero"
   >
+    <canvas class="canvasBg" ref="canvasBg"></canvas>
+
     <h1 class="hero__heading">
       <span class="greet__text">Welcome</span>
       <span class="intro__text">I</span>
@@ -48,6 +50,8 @@
 </template>
 
 <script>
+// import { change, init } from "./Particles";
+
 export default {
   name: "HeroSlide",
   props: {
@@ -57,6 +61,7 @@ export default {
     return {
       blinkInterval: setInterval(this.blink, 5000),
       greetInterval: setInterval(this.checkHour, 20000),
+      changeParticle: () => {},
     };
   },
 
@@ -114,7 +119,12 @@ export default {
     },
   },
 
-  mounted() {},
+  mounted() {
+    setTimeout(() => {
+      // init();
+      // this.changeParticle = change;
+    }, 5000);
+  },
 };
 </script>
 <style>
