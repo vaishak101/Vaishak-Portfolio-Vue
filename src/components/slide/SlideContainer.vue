@@ -1,5 +1,5 @@
 <template>
-  <HeroSlide :active="activeTab" ref="hero" />
+  <HeroSlide :active="activeTab" :toggle="toggleDark" ref="hero" />
   <WorkSlide v-if="pageLoad" :active="activeTab" />
   <CodepenSlide v-if="pageLoad" :active="activeTab" />
   <About v-if="pageLoad" :active="activeTab" />
@@ -20,6 +20,7 @@ export default {
   watch: {
     toggleDark(val) {
       this.$refs.hero.blink();
+      this.$refs.hero.changeParticle();
     },
   },
   data() {
