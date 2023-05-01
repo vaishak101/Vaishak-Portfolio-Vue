@@ -11,6 +11,7 @@
   >
     <kinesis-container
       style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+      :active="!mobMode"
     >
       <div class="hero-container">
         <div class="blob-1">
@@ -139,6 +140,8 @@ export default {
       blinkInterval: setInterval(this.blink, 5000),
       greetInterval: setInterval(this.checkHour, 20000),
       changeParticle: () => {},
+      windowWidth: window.innerWidth,
+      mobMode: window.innerWidth <= 1200,
     };
   },
 
@@ -152,10 +155,12 @@ export default {
         this.greetInterval = setInterval(this.checkHour, 3000);
       }
     },
+    windowWidth(val) {
+      val <= 1200 ? (this.mobMode = true) : (this.mobMode = false);
+    },
   },
   methods: {
     blink() {
-      console.log("blink");
       const nameText = document.querySelectorAll(".intro__text"),
         descText = document.querySelectorAll(".intro__text--2");
       let colorTextHero,
@@ -184,7 +189,6 @@ export default {
         }, 26);
     },
     checkHour() {
-      console.log("hour");
       const msg = document.querySelector(".greet__text");
       const t = new Date();
       let e = (t.getHours() + t.getMinutes() / 60).toFixed(2);
@@ -194,9 +198,20 @@ export default {
         ? (msg.textContent = "Hello there")
         : e >= 18 && (msg.textContent = "Good Evening");
     },
+    onResize() {
+      this.windowWidth = window.innerWidth;
+    },
   },
 
-  mounted() {},
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener("resize", this.onResize);
+    });
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("resize", this.onResize);
+  },
 };
 </script>
 <style>
