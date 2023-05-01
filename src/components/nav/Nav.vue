@@ -1,7 +1,7 @@
 <template>
   <nav class="nav" :class="{ show: menuOpen }">
     <h1>
-      <a
+      <span
         class="nav__logo"
         data-sect="0"
         @click="sendActive(0)"
@@ -13,41 +13,41 @@
           data-sect="0"
           alt="Vaishak Nair Logo"
         />
-      </a>
+      </span>
     </h1>
     <ul class="nav__ul">
       <li>
-        <a
+        <span
           href="#"
           class="nav__links click"
           data-sect="1"
           @click="sendActive(1)"
           :class="{ disabled: disabled, activelink: active === 1 }"
-          >Work</a
+          >Work</span
         >
       </li>
       <li>
-        <a
+        <span
           href="#"
           class="nav__links click"
           data-sect="2"
           @click="sendActive(2)"
           :class="{ disabled: disabled, activelink: active === 2 }"
-          >Pens</a
+          >Pens</span
         >
       </li>
       <li>
-        <a
+        <span
           href="#"
           class="nav__links click"
           data-sect="3"
           @click="sendActive(3)"
           :class="{ disabled: disabled, activelink: active === 3 }"
-          >About</a
+          >About</span
         >
       </li>
     </ul>
-    <a class="darkBtn" @click="darkModeHandle">
+    <span class="darkBtn" @click="darkModeHandle">
       <svg
         v-if="darkMode"
         fill="#ffffff"
@@ -77,15 +77,15 @@
           d="M18.44,34.68a18.22,18.22,0,0,1-2.94-.24,18.18,18.18,0,0,1-15-20.86A18.06,18.06,0,0,1,9.59.63,2.42,2.42,0,0,1,12.2.79a2.39,2.39,0,0,1,1,2.41L11.9,3.1l1.23.22A15.66,15.66,0,0,0,23.34,21h0a15.82,15.82,0,0,0,8.47.53A2.44,2.44,0,0,1,34.47,25,18.18,18.18,0,0,1,18.44,34.68ZM10.67,2.89a15.67,15.67,0,0,0-5,22.77A15.66,15.66,0,0,0,32.18,24a18.49,18.49,0,0,1-9.65-.64A18.18,18.18,0,0,1,10.67,2.89Z"
         />
       </svg>
-    </a>
+    </span>
   </nav>
-  <a v-show="mobMode" class="nav__slider" @click="toggleMenu">
+  <span v-show="mobMode" class="nav__slider" @click="toggleMenu">
     <div class="nav__btn" :class="{ menuactive: menuOpen }">
       <span class="bar-one bar"></span>
       <span class="bar-two bar"></span>
       <span class="bar-three bar"></span>
     </div>
-  </a>
+  </span>
   <div
     v-show="mobMode"
     v-if="menuOpen"
