@@ -14,7 +14,7 @@
       :active="!mobMode"
     >
       <div class="hero-container">
-        <div class="blob-1">
+        <div class="blob-1 blob">
           <kinesis-element :strength="20">
             <div class="tk-blob">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 747.2 726.7">
@@ -51,31 +51,37 @@
           </kinesis-element>
         </div>
         <div class="blob-4">
-          <div class="tk-blob" style="--fill: #fdd25d">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 425.9 377">
-              <path
-                d="M389.3 42c39.8 40.8 47.5 116.3 21.3 165.4-26.1 49.1-86 71.8-145.9 104.3-59.8 32.5-119.6 74.8-168.9 63.4C46.5 363.7 7.6 298.5 1 235.7-5.5 173 20.3 112.5 59.8 71.9 99.3 31.2 152.4 10.2 215 2.8 277.5-4.7 349.5 1.2 389.3 42z"
-              ></path>
-            </svg>
-          </div>
+          <kinesis-element :strength="80">
+            <div class="tk-blob" style="--time: 3s; --fill: #fdd25d">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 425.9 377">
+                <path
+                  d="M389.3 42c39.8 40.8 47.5 116.3 21.3 165.4-26.1 49.1-86 71.8-145.9 104.3-59.8 32.5-119.6 74.8-168.9 63.4C46.5 363.7 7.6 298.5 1 235.7-5.5 173 20.3 112.5 59.8 71.9 99.3 31.2 152.4 10.2 215 2.8 277.5-4.7 349.5 1.2 389.3 42z"
+                ></path>
+              </svg>
+            </div>
+          </kinesis-element>
         </div>
         <div class="blob-5">
-          <div class="tk-blob" style="--time: 6s; --fill: #e3f2c1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 303.2">
-              <path
-                d="M260.2 41.4c20 29.2 14.6 74.5 7.2 124.4-7.3 49.9-16.6 104.5-49.2 126-32.5 21.6-88.4 10.2-132-15.2s-75-64.7-83.6-107.8C-6.1 125.7 8 79 36.3 47.8 64.5 16.7 107 1.3 150.9.1c43.9-1.1 89.3 12 109.3 41.3z"
-              ></path>
-            </svg>
-          </div>
+          <kinesis-element :strength="40">
+            <div class="tk-blob" style="--time: 6s; --fill: #e3f2c1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 274 303.2">
+                <path
+                  d="M260.2 41.4c20 29.2 14.6 74.5 7.2 124.4-7.3 49.9-16.6 104.5-49.2 126-32.5 21.6-88.4 10.2-132-15.2s-75-64.7-83.6-107.8C-6.1 125.7 8 79 36.3 47.8 64.5 16.7 107 1.3 150.9.1c43.9-1.1 89.3 12 109.3 41.3z"
+                ></path>
+              </svg>
+            </div>
+          </kinesis-element>
         </div>
         <div class="blob-6">
-          <div class="tk-blob" style="--fill: #f44336">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 341.4 374.7">
-              <path
-                d="M309.9 70.6c37.8 52.7 39.8 128.7 15.4 184.1-24.3 55.4-75 90.1-125.4 107.4-50.4 17.4-100.4 17.4-136.2-3.3-35.7-20.7-57.2-62-62.4-102.1-5.2-40.2 5.8-79 29.1-128.3C53.6 79.1 89.1 19.3 143.7 4.1 198.3-11.2 272 18 309.9 70.6z"
-              ></path>
-            </svg>
-          </div>
+          <kinesis-element :strength="50">
+            <div class="tk-blob" style="--fill: #f44336">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 341.4 374.7">
+                <path
+                  d="M309.9 70.6c37.8 52.7 39.8 128.7 15.4 184.1-24.3 55.4-75 90.1-125.4 107.4-50.4 17.4-100.4 17.4-136.2-3.3-35.7-20.7-57.2-62-62.4-102.1-5.2-40.2 5.8-79 29.1-128.3C53.6 79.1 89.1 19.3 143.7 4.1 198.3-11.2 272 18 309.9 70.6z"
+                ></path>
+              </svg>
+            </div>
+          </kinesis-element>
         </div>
         <div class="content-wrap">
           <kinesis-element :strength="40">

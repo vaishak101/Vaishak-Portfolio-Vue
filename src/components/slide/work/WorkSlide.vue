@@ -136,14 +136,16 @@
           <span class="work__card--span-2">#Project 4</span>
           <div class="work__card--container">
             <div class="work__card--todo">
-              <!-- <img
-                src=""
+              <img
+                src="./../../../assets/img/work/lunchbox.webp"
                 class="work__card--todo--img work__card--todo--img-1"
                 alt="LunchBOX"
-              /> -->
+              />
             </div>
           </div>
-          <p class="work__card--desc">Lunchbox</p>
+          <p class="work__card--desc">
+            A Full Stack Food Ordering App, built on MERN.
+          </p>
           <div class="word__card--cta-wrap">
             <a
               class="work__card__btn"
@@ -151,7 +153,6 @@
               target="_blank"
               >Git Hub</a
             >
-            <a class="work__card__btn" href="#" target="_blank">View Page</a>
           </div>
         </div>
       </div>
