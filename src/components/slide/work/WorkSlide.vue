@@ -97,7 +97,7 @@
           </div>
         </div>
         <div class="work__card">
-          <span class="work__card--span-1">Todo List</span>
+          <span class="work__card--span-1">Todo List - PWA</span>
           <span class="work__card--span-2">#Project 4</span>
           <div class="work__card--container">
             <div class="work__card--todo">
@@ -114,7 +114,8 @@
             </div>
           </div>
           <p class="work__card--desc">
-            Todo App Built using React which performs CRUD operation.
+            Todo App Built using React which performs CRUD operation, also works
+            as PWA.
           </p>
           <div class="word__card--cta-wrap">
             <a
