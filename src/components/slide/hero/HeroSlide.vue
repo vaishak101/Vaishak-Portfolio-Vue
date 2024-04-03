@@ -62,6 +62,7 @@
 
 <script>
 import { KinesisContainer, KinesisElement } from "vue-kinesis";
+import "./../../../assets/particles.min.js";
 
 export default {
   name: "HeroSlide",
@@ -143,13 +144,9 @@ export default {
   mounted() {
     this.$nextTick(() => {
       window.addEventListener("resize", this.onResize);
-      particlesJS.load(
-        "particles-js",
-        "src/assets/particles.json",
-        function () {
-          console.log("callback - particles.js config loaded");
-        }
-      );
+      particlesJS.load("particles-js", "/particles.json", function () {
+        console.log("callback - particles.js config loaded");
+      });
     });
   },
 
