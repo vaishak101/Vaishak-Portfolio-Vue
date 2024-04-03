@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       activeTab: 0,
-      toggleDark: Boolean,
+      toggleDark: false,
     };
   },
 

@@ -12,7 +12,16 @@
   align-items: center;
   justify-content: center;
 }
-
+.particles-js-canvas-el {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.content-wrap {
+  position: relative;
+  z-index: 2;
+}
 .greet__text {
   display: block;
   text-align: center;

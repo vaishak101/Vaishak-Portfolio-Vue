@@ -79,7 +79,12 @@
       </svg>
     </span>
   </nav>
-  <span v-show="mobMode" class="nav__slider" @click="toggleMenu">
+  <span
+    v-show="mobMode"
+    class="nav__slider"
+    :class="{ 'close-active': menuOpen }"
+    @click="toggleMenu"
+  >
     <div class="nav__btn" :class="{ menuactive: menuOpen }">
       <span class="bar-one bar"></span>
       <span class="bar-two bar"></span>
@@ -96,6 +101,7 @@
 
 <script>
 export default {
+  emits: ["nav-click", "darkModeToggle"], // Declare custom events here
   data() {
     return {
       mobMode: window.innerWidth <= 1200,
