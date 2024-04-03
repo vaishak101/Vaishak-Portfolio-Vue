@@ -63,7 +63,7 @@
 <script>
 import { KinesisContainer, KinesisElement } from "vue-kinesis";
 import "./../../../assets/particles.min.js";
-
+import "./../../../assets/particles.json";
 export default {
   name: "HeroSlide",
   props: {

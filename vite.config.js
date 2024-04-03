@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  publicDir: 'src/assets', // Specify the directory containing static assets
   plugins: [vue()],
   resolve: {
     alias: {
@@ -12,3 +13,4 @@ export default defineConfig({
     }
   }
 })
+
